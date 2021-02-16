@@ -1,0 +1,16 @@
+<talbe>
+  <h2>Books</h2>
+   <tr>
+   <td>
+     <%= attachment_image_tag @book, :profile_image, fallback: "no_image.jpg" %>
+   </td>
+   <td>
+     <h4>Title</h4>
+     <%= link_to  @book, books_path(@book) %>
+   </td>
+   <td>
+    <h4>Opinion</h4>
+    <%=  %>
+   </td>
+  </tr>
+</talbe>

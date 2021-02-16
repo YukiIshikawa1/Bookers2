@@ -1,11 +1,18 @@
 <% @book.each do |book| %>
+<table class="table tabl-striped">
 <h2>Books</h2>
-<div>
-  <%= attachment_image_tag book.user, :profile_image %>
-  <p><%= image_tag('no_image.jpg') %></p>
+<tr>
+  <td>
+  <%= attachment_image_tag book.user, :profile_image, fallback: "no_image.jpg" %>
+  </td>
+  <td>
   <h4>Title</h4>
-  <%=link_to  book_path(book)  %>
+  <%= link_to  book_path(book)  %>
+  </td>
+  <td>
   <h4>Opinion</h4>
   <p><%= book.body %></p>
+  </td>
   <% end %>
-</div>
+</tr>
+<table class="table tabl-striped">

@@ -1,8 +1,18 @@
+<table class="table tabl-striped">
 <h1>Users</h1>
 <% @users.each do |user| %>
-<h4>image</h4>
-<%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg" %>
-<h4>name</h4>
-<%= link_to user.name %>
-<%= link_to "show", user_path(user.id) %>
-<% end %>
+<tr class="user-index">
+ <td class="user-index-list">
+  <h4>image</h4>
+   <%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg" %>
+ </td>
+ <td class="user-index-list">
+  <h4>name</h4>
+   <%= user.name %>
+ </td>
+ <td class="user-index-list">
+   <%= link_to "show", user_path(user.id) %>
+   </td>
+  <% end %>
+</tr>
+</table>
