@@ -1,11 +1,15 @@
 <h1>User info</h1>
- <%= attachment_image_tag @book.user, :profile_image %>
- <p>name<%= @book.book_name %></p>
- <p>introducion<%= @user.profile %></p>
- <%= link_to  edit_user_path(@user) %>
+ <%= attachment_image_tag user, :profile_image %>
+ <p>name<%= user.name %></p>
+ <p>introducion<%= user.introduction %></p>
+ <p></p>
+ <% if user.id == current_user.id %> 
+ <p><%= link_to  edit_user_path(user) %></p>
+ <% end %>
 
+ 
 <h1>New Book</h1>
-<%= form_with model: @book, local: true do |f| %>
+<%= form_with model: book, local: true do |f| %>
 <h4>Title</h4>
 <%= f.text_field :title %>
 <h4>Opinion</h4>

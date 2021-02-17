@@ -1,10 +1,40 @@
-<h2>Book detail</h2>
-  <%= attachment_image_tag @book.user, :profile_image %>
-  <p><%= image_tag('no_image.jpg') %></p>
-    <%=link_to @book.user.name %>
-  <h4>Title</h4>
-  <p><%=link_to "book",book_path(@book)%><p>
-      <h4>Opinion</h4>
-  <p><%= @book.body %></p>
-  <%= link_to "edit" %>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+     <%= render 'books/list', book: @book, user: @user %>
+    </div>
+
+   <div class="col-md-8 offset-md-1">
+    <table class="table table-hovew talbe-inverse">
+     <h1>Book detail</h1>
+      <thead>
+      <tr>
+         <th> </th>
+         <th><h4>Title</h4></th>
+         <th><h4>Opinion</h4></th>
+      </tr>
+     </thead>
+     <tbody>
+       <tr>
+        <td>
+           <%= attachment_image_tag @book.user, :profile_image, :fill,40,40, fallback: "no_image.jpg" %>
+           <%= link_to @user.name, user_path(@user.id) %>
+        </td>
+        <td>
+           <%=link_to @book.title,book_path(@book) %>
+        </td>
+        <td>
+           <%= @book.body %>
+        </td>
+        <td>
+          <% if @book.user == current_user %>
+          <%= link_to "edit", edit_book_path %>
+           <%= link_to "Delete", books_path(@book), method: :delete %>
+        </td>
+        <% end %>
+    </tr>
+    </tbody>
+   </talbe>
+  </div>
+ </div>
 </div>

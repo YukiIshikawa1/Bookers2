@@ -1,18 +1,34 @@
-<table class="table tabl-striped">
-<h1>Users</h1>
-<% @users.each do |user| %>
-<tr class="user-index">
- <td class="user-index-list">
-  <h4>image</h4>
-   <%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg" %>
- </td>
- <td class="user-index-list">
-  <h4>name</h4>
-   <%= user.name %>
- </td>
- <td class="user-index-list">
-   <%= link_to "show", user_path(user.id) %>
-   </td>
-  <% end %>
-</tr>
+ <div class="container px-5 px-sm-0">
+   <div class="row">
+     <div class="col-md-3">
+       <%= render 'books/list', book: @book, user: @user %>
+       </div>
+    <div class="col-md-8 offset-md-1">
+     <table class="table tabl-striped">
+      <thead class="table table-hovew talbe-inverse">
+       <h1>Users</h1>
+        <tr>
+         <th><h4>image</h4></th>
+         <th><h4>name</h4></th>
+              <th> </th>
+        </tr>
+      </thead>
+  <% @users.each do |user| %>
+   <tbody>
+      <tr>
+       <td>
+         <%= attachment_image_tag user, :profile_image, :fill,40,40, fallback: "no_image.jpg" %>
+       </td>
+       <td >
+        <%= user.name %>
+       </td>
+       <td>
+        <%= link_to "show", user_path(user.id) %>
+       </td>
+   <% end %>
+  </tr>
+</tbody>
 </table>
+</div>
+</div>
+</div>
