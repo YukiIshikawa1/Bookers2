@@ -1,3 +1,8 @@
+  <% if flash[:notice] %>
+      <p class="flash">
+        <%= flash[:notice] %>
+      </p>
+  <% end %>
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
@@ -17,19 +22,19 @@
      <tbody>
        <tr>
         <td>
-           <%= attachment_image_tag @book.user, :profile_image, :fill,40,40, fallback: "no_image.jpg" %>
+           <%= attachment_image_tag @a.user, :profile_image,  :fill ,40 ,40 , fallback: "no_image.jpg" %>
            <%= link_to @user.name, user_path(@user.id) %>
         </td>
         <td>
-           <%=link_to @book.title,book_path(@book) %>
+           <%=link_to @a.title,book_path(@a) %>
         </td>
         <td>
-           <%= @book.body %>
+           <%= @a.body %>
         </td>
         <td>
-          <% if @book.user == current_user %>
-          <%= link_to "edit", edit_book_path %>
-           <%= link_to "Delete", books_path(@book), method: :delete %>
+          <% if @a.user == current_user %>
+          <%= link_to "edit", edit_book_path(@a.id), class:"btn btn-secondary " %>
+           <%= link_to "Delete", book_path(@a), method: :delete, "data-confirm" => "本当に削除しますか?", class:"btn btn-secondary " %>
         </td>
         <% end %>
     </tr>
