@@ -17,9 +17,9 @@
    <tbody>
       <tr>
        <td>
-         <%= attachment_image_tag user, :profile_image, :fill,40,40, fallback: "no_image.jpg" %>
+         <%= attachment_image_tag user, :profile_image, :fill,40,40, fallback: "no_image.jpg",size:'40 x 40'%>
        </td>
-       <td >
+       <td>
         <%= user.name %>
        </td>
        <td>
