@@ -1,20 +1,34 @@
+<div class="container">
+ <div class="row">
+  <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
   <% if @user.errors.any? %>
-       <div class="errors">
-        <%=  @user.errors.count %> errors prohibited this obj from being saved:
-       </div>
-       <div class="errors-text">
-        <%  @user.errors.full_messages.each do |message| %>
-       <%= message %>
+   <div class="errors">
+     <%=  @user.errors.count %> errors prohibited this obj from being saved:
+   </div>
+   <div class="errors-text">
+     <%  @user.errors.full_messages.each do |message| %>
+     <%= message %>
+     <% end %>
+    </div>
+  <% end %>
+     <h1>User info</h1>
+       <%= form_with model: @user, local:true do |f| %>
+    <div class="from-group">  
+     <label for="user_name">Name</label>
+       <%= f.text_field :name,autofocus: true, id:"inputName",placeholder:"名前" , class: "from-control" %>
+    </div> 
+    <div class="from-group"> 
+      <label for="user_image">Image</label>
+        <%= f.attachment_field :profile_image, class: "from-control" %>
+     </div>  
+     <div class="from-group">  
+       <label for="user_introduction">Introduction</label>
+        <%= f.text_area :introduction, class: "from-control" %>
+     </div> 
+     <div class="from-group"> 
+        <%= f.submit "Update User", class: "btn btn-secondary"  %>
+     </div> 
        <% end %>
-       </div>
- <% end %>
-<h1>User info</h1>
-<%= form_with model: @user, local:true do |f| %>
-<h4>Name</h4>
-<%= f.text_field :name,autofocus: true, id:"inputName",placeholder:"名前" %>
-<h4>Image</h4>
-<%= f.attachment_field :profile_image %>
-<h4>Introduction</h4>
-<%= f.text_area :introduction %>
-<%= f.submit "Update User" %>
-<% end %>
+  </div>
+ </div>
+</div>
