@@ -120,8 +120,8 @@ Userモデルのテスト
 [32m      ユーザ画像・名前のリンク先が正しい[0m
 [32m      投稿のtitleが表示される[0m
 [32m      投稿のopinionが表示される[0m
-[31m      投稿の編集リンクが表示される (FAILED - 1)[0m
-[31m      投稿の削除リンクが表示される (FAILED - 2)[0m
+[32m      投稿の編集リンクが表示される[0m
+[32m      投稿の削除リンクが表示される[0m
     サイドバーの確認
 [32m      自分の名前と紹介文が表示される[0m
 [32m      自分のユーザ編集画面へのリンクが存在する[0m
@@ -134,10 +134,10 @@ Userモデルのテスト
     投稿成功のテスト
 [32m      自分の新しい投稿が正しく保存される[0m
     編集リンクのテスト
-[31m      編集画面に遷移する (FAILED - 3)[0m
+[32m      編集画面に遷移する[0m
     削除リンクのテスト
-[31m      正しく削除される (FAILED - 4)[0m
-[31m      リダイレクト先が、投稿一覧画面になっている (FAILED - 5)[0m
+[32m      正しく削除される[0m
+[32m      リダイレクト先が、投稿一覧画面になっている[0m
   自分の投稿編集画面のテスト
     表示の確認
 [32m      URLが正しい[0m
@@ -145,7 +145,7 @@ Userモデルのテスト
 [32m      title編集フォームが表示される[0m
 [32m      opinion編集フォームが表示される[0m
 [32m      Update Bookボタンが表示される[0m
-[31m      Showリンクが表示される (FAILED - 6)[0m
+[31m      Showリンクが表示される (FAILED - 1)[0m
 [32m      Backリンクが表示される[0m
     編集成功のテスト
 [32m      titleが正しく更新される[0m
@@ -156,7 +156,7 @@ Userモデルのテスト
 [32m      URLが正しい[0m
 [32m      自分と他人の画像が表示される: fallbackの画像がサイドバーの1つ＋一覧(2人)の2つの計3つ存在する[0m
 [32m      自分と他人の名前がそれぞれ表示される[0m
-[31m      自分と他人のshowリンクがそれぞれ表示される (FAILED - 7)[0m
+[31m      自分と他人のshowリンクがそれぞれ表示される (FAILED - 2)[0m
     サイドバーの確認
 [32m      自分の名前と紹介文が表示される[0m
 [32m      自分のユーザ編集画面へのリンクが存在する[0m
@@ -239,7 +239,7 @@ Userモデルのテスト
 [32m        投稿の削除リンクが表示されない[0m
       サイドバーの確認
 [32m        他人の名前と紹介文が表示される[0m
-[31m        他人のユーザ編集画面へのリンクが存在する (FAILED - 8)[0m
+[31m        他人のユーザ編集画面へのリンクが存在する (FAILED - 3)[0m
 [32m        自分の名前と紹介文は表示されない[0m
 [32m        自分のユーザ編集画面へのリンクは存在しない[0m
     他人の投稿編集画面
@@ -247,13 +247,13 @@ Userモデルのテスト
     他人のユーザ詳細画面のテスト
       表示の確認
 [32m        URLが正しい[0m
-[31m        投稿一覧のユーザ画像のリンク先が正しい (FAILED - 9)[0m
+[32m        投稿一覧のユーザ画像のリンク先が正しい[0m
 [32m        投稿一覧に他人の投稿のtitleが表示され、リンクが正しい[0m
 [32m        投稿一覧に他人の投稿のopinionが表示される[0m
 [32m        自分の投稿は表示されない[0m
       サイドバーの確認
 [32m        他人の名前と紹介文が表示される[0m
-[31m        他人のユーザ編集画面へのリンクが存在する (FAILED - 10)[0m
+[31m        他人のユーザ編集画面へのリンクが存在する (FAILED - 4)[0m
 [32m        自分の名前と紹介文は表示されない[0m
 [32m        自分のユーザ編集画面へのリンクは存在しない[0m
     他人のユーザ情報編集画面
@@ -293,96 +293,33 @@ Pending: (Failures listed here are expected and do not affect your suite's statu
 
 Failures:
 
-  1) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 投稿の編集リンクが表示される
-     [31mFailure/Error: expect(page).to have_link 'Edit', href: edit_book_path(book)[0m
-     [31m  expected to find link "Edit" with href "/books/1/edit" but there were no matches[0m
-     [36m# ./spec/system/02_after_login_spec.rb:130:in `block (4 levels) in <main>'[0m
-
-  2) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 投稿の削除リンクが表示される
-     [31mFailure/Error: expect(page).to have_link 'Destroy', href: book_path(book)[0m
-     [31m  expected to find link "Destroy" with href "/books/1" but there were no matches[0m
-     [36m# ./spec/system/02_after_login_spec.rb:133:in `block (4 levels) in <main>'[0m
-
-  3) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 編集リンクのテスト 編集画面に遷移する
-     [31mFailure/Error: click_link 'Edit'[0m
-     [31m[0m
-     [31mCapybara::ElementNotFound:[0m
-     [31m  Unable to find link "Edit"[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/node/finders.rb:303:in `block in synced_resolve'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/node/base.rb:83:in `synchronize'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/node/finders.rb:292:in `synced_resolve'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/node/finders.rb:53:in `find'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/node/actions.rb:42:in `click_link'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:768:in `block (2 levels) in <class:Session>'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
-     [36m# ./spec/system/02_after_login_spec.rb:178:in `block (4 levels) in <main>'[0m
-
-  4) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト 正しく削除される
-     [31mFailure/Error: click_link 'Destroy'[0m
-     [31m[0m
-     [31mCapybara::ElementNotFound:[0m
-     [31m  Unable to find link "Destroy"[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/node/finders.rb:303:in `block in synced_resolve'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/node/base.rb:83:in `synchronize'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/node/finders.rb:292:in `synced_resolve'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/node/finders.rb:53:in `find'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/node/actions.rb:42:in `click_link'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:768:in `block (2 levels) in <class:Session>'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
-     [36m# ./spec/system/02_after_login_spec.rb:185:in `block (4 levels) in <main>'[0m
-
-  5) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト リダイレクト先が、投稿一覧画面になっている
-     [31mFailure/Error: click_link 'Destroy'[0m
-     [31m[0m
-     [31mCapybara::ElementNotFound:[0m
-     [31m  Unable to find link "Destroy"[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/node/finders.rb:303:in `block in synced_resolve'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/node/base.rb:83:in `synchronize'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/node/finders.rb:292:in `synced_resolve'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/node/finders.rb:53:in `find'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/node/actions.rb:42:in `click_link'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:768:in `block (2 levels) in <class:Session>'[0m
-     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
-     [36m# ./spec/system/02_after_login_spec.rb:185:in `block (4 levels) in <main>'[0m
-
-  6) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 Showリンクが表示される
+  1) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 Showリンクが表示される
      [31mFailure/Error: expect(page).to have_link 'Show', href: book_path(book)[0m
      [31m  expected to find link "Show" with href "/books/1" but there were no matches[0m
      [36m# ./spec/system/02_after_login_spec.rb:219:in `block (4 levels) in <main>'[0m
 
-  7) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 自分と他人のshowリンクがそれぞれ表示される
+  2) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 自分と他人のshowリンクがそれぞれ表示される
      [31mFailure/Error: expect(page).to have_link 'Show', href: user_path(user)[0m
      [31m  expected to find link "Show" with href "/users/2" but there were no matches[0m
      [36m# ./spec/system/02_after_login_spec.rb:265:in `block (4 levels) in <main>'[0m
 
-  8) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する
+  3) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する
      [31mFailure/Error: expect(page).to have_link '', href: edit_user_path(other_user)[0m
      [31m  expected to find link "" with href "/users/1/edit" but there were no matches[0m
      [36m# ./spec/system/03_finishing_touches_spec.rb:248:in `block (5 levels) in <main>'[0m
 
-  9) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 投稿一覧のユーザ画像のリンク先が正しい
-     [31mFailure/Error: expect(page).to have_link '', href: user_path(other_user)[0m
-     [31m  expected to find link "" with href "/users/1" but there were no matches[0m
-     [36m# ./spec/system/03_finishing_touches_spec.rb:277:in `block (5 levels) in <main>'[0m
+  4) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する
+     [31mFailure/Error: expect(page).to have_link '', href: edit_user_path(other_user)[0m
+     [31m  expected to find link "" with href "/users/1/edit" but there were no matches[0m
+     [36m# ./spec/system/03_finishing_touches_spec.rb:297:in `block (5 levels) in <main>'[0m
 
-  10) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する
-      [31mFailure/Error: expect(page).to have_link '', href: edit_user_path(other_user)[0m
-      [31m  expected to find link "" with href "/users/1/edit" but there were no matches[0m
-      [36m# ./spec/system/03_finishing_touches_spec.rb:297:in `block (5 levels) in <main>'[0m
-
-Finished in 16.69 seconds (files took 1.63 seconds to load)
-[31m198 examples, 10 failures, 1 pending[0m
+Finished in 16.32 seconds (files took 1.54 seconds to load)
+[31m198 examples, 4 failures, 1 pending[0m
 
 Failed examples:
 
-[31mrspec ./spec/system/02_after_login_spec.rb:129[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 投稿の編集リンクが表示される[0m
-[31mrspec ./spec/system/02_after_login_spec.rb:132[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 投稿の削除リンクが表示される[0m
-[31mrspec ./spec/system/02_after_login_spec.rb:177[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 編集リンクのテスト 編集画面に遷移する[0m
-[31mrspec ./spec/system/02_after_login_spec.rb:188[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト 正しく削除される[0m
-[31mrspec ./spec/system/02_after_login_spec.rb:191[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト リダイレクト先が、投稿一覧画面になっている[0m
 [31mrspec ./spec/system/02_after_login_spec.rb:218[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 Showリンクが表示される[0m
 [31mrspec ./spec/system/02_after_login_spec.rb:264[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 自分と他人のshowリンクがそれぞれ表示される[0m
 [31mrspec ./spec/system/03_finishing_touches_spec.rb:247[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する[0m
-[31mrspec ./spec/system/03_finishing_touches_spec.rb:276[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 投稿一覧のユーザ画像のリンク先が正しい[0m
 [31mrspec ./spec/system/03_finishing_touches_spec.rb:296[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する[0m
 
